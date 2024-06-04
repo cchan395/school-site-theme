@@ -1,0 +1,48 @@
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+
+	@include center-block;
+
+	margin-bottom: 1.5em;
+}
+
+/* From fwd-starter-theme as per LH hint, adjusted to our style.
+This code will NOT work properly if there is a sidebar on the left or right */
+.alignwide,
+.alignfull {
+	display: block;
+	width: 100vw;
+	max-width: 100vw;
+	margin: 2rem calc(50% - 50vw);
+}
+
+.alignwide {
+	width: auto;
+}
+
+@media only screen and (min-width: $mq_breakpoint_large) {
+	.alignwide {
+		max-width: $mq_breakpoint_xl;
+		margin: auto;
+	}
+}

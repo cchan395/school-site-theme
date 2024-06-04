@@ -1,0 +1,57 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Responsive headings resizing
+@mixin responsive-heading($small, $medium, $large) {
+	font-size: $small;
+
+	@media (min-width: $mq_breakpoint_medium) {
+		font-size: $medium;
+	}
+
+	@media (min-width: $mq_breakpoint_large) {
+		font-size: $large;
+	}
+}
+
+// Link colors when on dark background color
+@mixin link-colors-dark() {
+	color: $color__link-dark-bg;
+  
+	&:visited {
+		color: $color__link-visited-dark-bg;
+	}
+  
+	&:hover {
+		color: $color__link-hover-dark-bg;
+	}
+}
+
+// Text color when on dark background color
+@mixin text-color-dark() {
+	color: $color__text-main-dark-bg;
+}
+
+// Responsive footer display
+@mixin responsive-footer() {
+    @media (min-width: $mq_breakpoint_large) {
+		flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+	}
+}
+
+@mixin add-full-width() {
+	@media (min-width: $mq_breakpoint_large) {
+		width: 100%;
+	}
+}
